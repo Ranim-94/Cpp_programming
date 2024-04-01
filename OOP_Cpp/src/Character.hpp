@@ -25,6 +25,8 @@ public: // the 2nd type of access modifier
 	- name same as the class
 	- doesn't have parameters and return type
 	-function: intialize parameter of the object instantiated
+	that is , each time we innstantiate, the constuctor will
+	allocate some memory for the members variables
 
 	*/
 
