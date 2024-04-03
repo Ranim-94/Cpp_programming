@@ -1,29 +1,26 @@
 #include <iostream>
+#include <string>
 #include"function_demo.hpp"
+#include "run_func_demo.hpp"
+
+#define NB_DEMO 1
+#define DEMO_CHOICE 0 // choose what demo to run
 
 int main() {
     
 std::cout << " \t ======== Hello functions concepts in modern C++! ========" << std::endl;
 
-float a = 3.0, b = 2.0;
 
-float result; // to store the value
+// list all program we have
+std::string program_list[NB_DEMO] = {"function_demo"}; // 0,
 
-// call the function
-result = add_nb(a,b);
+// choose some demo to run
+std::string program_choice = program_list[DEMO_CHOICE] ;
 
-result = a+b ;
+if (program_choice == program_list[0])
 
-std::cout << "-> using add function (float type) for input = "<< a << "| b = " << b
-<< " | output = " << result << std::endl;
-    
-int c = 2, d = 5;
+    run_function_demo();
 
-// call the functions (int argument)
-int res_2 = add_nb(c,d);
-
-std::cout << "-> using add function (int type) for input = "<< c << "| b = " << c
-<< " | output = " << res_2 << std::endl;
 
 return 0;
 
