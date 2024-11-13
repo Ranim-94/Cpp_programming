@@ -1,5 +1,5 @@
 build:
-	g++ -Wall -std=c++17 src/*.cpp -o output
+	g++ -Wall -std=c++17 *.cpp -o output
 
 run:
 	./output

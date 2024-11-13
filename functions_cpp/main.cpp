@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
-#include"function_demo.hpp"
+#include "function_demo.hpp"
 #include "run_func_demo.hpp"
+#include "address_op_demo.hpp"
 
-#define NB_DEMO 1
-#define DEMO_CHOICE 0 // choose what demo to run
+#define NB_DEMO 2
+#define DEMO_CHOICE 1 // choose what demo to run
 
 int main() {
     
@@ -12,14 +13,21 @@ std::cout << " \t ======== Hello functions concepts in modern C++! ========" << 
 
 
 // list all program we have
-std::string program_list[NB_DEMO] = {"function_demo"}; // 0,
+std::string program_list[NB_DEMO] = {"function",
+"addresse operator"}; // 0,
 
 // choose some demo to run
 std::string program_choice = program_list[DEMO_CHOICE] ;
 
+std::cout<<"Running "<<program_choice<<" demo"<<std::endl<<std::endl;
+
 if (program_choice == program_list[0])
 
     run_function_demo();
+
+else if (program_choice == program_list[1])
+
+    run_address_operator_demo();
 
 
 return 0;
