@@ -1,4 +1,4 @@
 #pragma once
 
 // Declaring function prototype
-void run_address_operator_demo(void);
+void run_ampersand_operator_demo(void);
