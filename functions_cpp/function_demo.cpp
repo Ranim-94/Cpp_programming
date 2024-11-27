@@ -35,3 +35,14 @@ return result;
 
 
 } // End add_two_nb
+
+
+void vec_add_one(std::vector<int>& vec){
+
+    for (int i = 0 ; i< vec.size(); i++){
+        vec[i] += 1 ;
+
+    } /* End loop*/
+
+
+} /* End add_1 */
