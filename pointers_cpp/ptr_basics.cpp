@@ -29,12 +29,4 @@ void run_ptr_basics(void){
 
    std::cout<<" x value using ptr dereferencing = "<<*ptr_x<<std::endl;
 
-   /*    
-   
-   */
-
-
-
-
-
 } /* End run_ptr_basics() */
