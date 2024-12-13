@@ -5,7 +5,7 @@
 #include "ampersand_operator.hpp"
 
 #define NB_DEMO 2
-#define DEMO_CHOICE 1 // choose what demo to run
+#define DEMO_CHOICE 0 // choose what demo to run
 
 int main() {
     
@@ -14,8 +14,8 @@ std::cout << " \t ======== Hello functions concepts in modern C++! ========" << 
 
 
 // list all program we have
-std::string program_list[NB_DEMO] = {"function",
-"& operator"}; // 0,
+std::string program_list[NB_DEMO] = {"function", // 0
+"& operator"}; // 1,
 
 // choose some demo to run
 std::string program_choice = program_list[DEMO_CHOICE] ;
