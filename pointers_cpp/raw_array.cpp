@@ -4,7 +4,7 @@
 #include <iostream>
 #include <numeric>
 #include <iterator>
-
+#include <array>
 
 #define ARRAY_SIZE 100
 
@@ -16,6 +16,18 @@ void run_raw_array(void){
 
 /* Creating the array*/
 int arr_id[ARRAY_SIZE];
+
+/* we can use standard array also*/
+
+/*
+    std::array<int,ARRAY_SIZE> arr_id;
+
+    // However, we can't use the function print_1D_int_arr(arr_id,ARRAY_SIZE)
+    // It won't be decayed to pointer
+    // because this array is template base, to be see later
+
+*/
+
 
 /* Instead of using for loop, we will  use algorithm for std in cpp*/
 
