@@ -18,6 +18,18 @@ public: // the 2nd type of access modifier
 
 	// this is a constructor
 	Character(std::string name);
+
+	/*
+		We can also have what we call default constructor as the following:
+		Character();
+		-it will have the same name of the class
+		- it takes no parameters
+		- we can however inside it initilize some
+		member variable
+
+	
+	*/
+
 	
 	/*
 	General points on constructors:

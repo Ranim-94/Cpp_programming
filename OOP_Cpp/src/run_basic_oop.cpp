@@ -1,11 +1,11 @@
-#include <iostream>
-#include"Character.hpp"
 
-int main() {
-    
-    std::cout << "Hello OOP concepts in modern C++!" << std::endl;
+#include "run_basic_oop.hpp"
 
-    // Create a instance from Character
+#include "Character.hpp"
+
+void run_basic_oop(void){
+
+ // Create a instance from Character
     Character knight("John");
     // in this type of instantiation, the object is created at the stack
     // the destructor will called automatically
@@ -19,7 +19,7 @@ int main() {
 
     // Order of deleting of constructor: the 1st object created
     // will be lastly deleted
-    
-    return 0;
 
-} // End main()
+
+
+} /* End run_basic_oop() */
