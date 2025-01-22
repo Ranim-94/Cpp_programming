@@ -39,5 +39,15 @@ void Character::take_Damage (float damage){
 }
 
 
+void Character::check_experience(void){
+
+ if (this->m_points > 3)
+	std::cout<<" Character level is up"<<std::endl;
+
+else
+	std::cout<<" Character level is down"<<std::endl;
+
+} /* end check_experience()  */
+
 Character::~Character(){
 }

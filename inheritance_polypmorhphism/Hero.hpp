@@ -48,6 +48,9 @@ public:
 
 	void attack (float amount);
 
+	// common method between derived classes: the Hero and the Wizard
+	void defend(void);
+
 	~Hero();
 
 }; /* End Hero class*/

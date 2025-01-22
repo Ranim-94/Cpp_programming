@@ -26,6 +26,8 @@ public:
 
 	void take_Damage (float damage);
 
+	void check_experience(void);
+
 
 	~Character();
 
