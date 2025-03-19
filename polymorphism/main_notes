@@ -1,0 +1,33 @@
+
+main notes about polymorphism:
+
+1- polymorphism refers to the concept that we can point out or refer an object to some other object
+	- derived class stored in a base class
+	- example: Character* char_1 = &hero; where hero instance is a derived class from Character
+
+2- polymorphism require:
+	- a base class and some derived class
+	- some function will be redefined in the derived class
+	- using of virtual keyword in the base class function, 
+		because the base class will have some derived class
+		
+	- if the derived class also has some derived class (multilevel inheritance)
+		- we can use also the virtual keyword in the derived class
+
+2- 2 types of polymorphism:
+	- static -> C++ will use the the function in the base class
+	- dynamic using the virtual keyword (this is refer as dynamic binding): the compiler will
+	infer at run time which function should be called
+	
+3- Dynamic binding require:
+	- the use of virtual keyword
+	- but also the use of & or pointers objects
+	
+================================ Notes from my reading: ================================
+
+source: C++ 20 for programmers , chapter 10:
+-> the introduction: goal of runtime polymorphsim:
+	- programming in general way (generic)
+	- treat all object as a some kind of a general object ( the base class)
+	- benefit: make code easily extensible by modifying only the new class code
+
