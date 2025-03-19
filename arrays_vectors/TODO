@@ -1,0 +1,14 @@
+
+To organize after a revision about std::array
+
+
+
+List of mistakes done (so I can learn from them always):
+
+
+- always in some .cpp file, make sure that header file name in 
+    the #include are spelled correctly
+    - otherwise functions prototype will not be recognized
+
+- don't forget the std for containers type, such  as
+    std::vector<int>, ...
