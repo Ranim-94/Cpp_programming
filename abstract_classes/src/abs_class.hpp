@@ -16,7 +16,27 @@ public:
 /* this is a pure virtual function */
 virtual void log(void) = 0;
 
+}; /* End Student */
+
 /*
+
+    1) Some intuitive introduction about abstract classes:
+
+        -Suppose we have base class named Vehicle, and it has some method called
+        Run()
+        - the vehicle concept by self is so abstract: if we ask a person how did 
+        you come at work, and it tell use he comes by a vehicle, we can assume
+        that the vehicle is a car, but vehicle is an abstract concept
+            - a car, a train, a tank,... all of them are vehicles
+
+        - that's why some classes can be used as some template or blue print,
+        and the their method such as the Run() , is useless to implement inside the
+        base class (as we did as before)
+
+        - it is more useful to impelemnt the Run() method inside the derived class,
+        the more concrete one
+
+
     Some notes:
 
     - a pure virutual function is a type of virtual 
@@ -28,6 +48,8 @@ virtual void log(void) = 0;
 
     - a class that contains at least 1 pure virtual
     functions is called an abstract class
+     <-> in other words, when we see some some_func()=0; inside a class,
+     that class is abstract
 
     An abstract base class can't be instantiate
     it is only meant to derived from
@@ -50,7 +72,7 @@ virtual void log(void) = 0;
 
 */
 
-}; /* End Student */
+
 
 class Med_Student:public Student{
 

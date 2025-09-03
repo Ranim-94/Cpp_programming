@@ -30,7 +30,7 @@ std::cout<<"Vec[0] after function call = "<<vec.front()<<std::endl;
 
 /* create some other vectors using {}*/
 
-std::vector<int> vec_2 = {12,13,14};
+std::vector<int> vec_2{12,13,14};
 
 /* using some functions in the vector<> container */
 

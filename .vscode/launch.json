@@ -1,0 +1,46 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug main_copy_primitive",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Copy_Cpp/output/main_copy_primitive",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/Copy_Cpp",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Debug main_object_copy",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Copy_Cpp/output/main_object_copy",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/Copy_Cpp",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+
+
+
+In Cpp, we can have functions with same
+name, but different list of arguments
+
+Example:
+
+void print_Val(std::string msg, bool new_line);
+
+void print_Val(int nb, bool new_line);
+
+In our program, we can use print_Val()
+
+    1- as long as the list of arguments are diffenret
+
+    2- and the return type is different
+     in this case void <-> we can't have different return type,
+     because otherwise the compiler couldn't differentiate between them
+
+
+

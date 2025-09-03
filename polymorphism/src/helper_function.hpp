@@ -4,4 +4,4 @@
 
 #include "Student.hpp"
 
-void somefunction(Student& sqr);
+void somefunction(Student& sdt);

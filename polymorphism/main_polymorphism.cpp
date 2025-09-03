@@ -8,13 +8,13 @@ int main(void){
 
 std::cout<<"Polymorphism demo  "<<std::endl;
 
-/* instantiating some base class */    
-Student stud_1("John",2014);
+/* instantiating an object from base class */    
+Student stud_1{"John",2014};
 
-/* instantiating some derived class */    
-Medical_Student med_1("king",2014,"Radiology");
+/* instantiating an object from derived class */    
+Medical_Student med_1{"king",2014,"Radiology"};
 
-/* Polymorphism starts here */
+/* =================== Polymorphism starts here =================== */
 
 /* Declaring a base class pointer*/
 Student* stud_ptr;
@@ -25,6 +25,8 @@ stud_ptr = &med_1;
 std::cout<<"\t 1- Logging info via Student* stud_ptr = &med_1 \n";
 
 stud_ptr->log_info();
+// Be aware that we are using -> operator since we are using pointers
+// If we used & (references), we would use the . operator instead
 
 /* 2- assignigng the base ptr to the base class now*/
     
@@ -45,7 +47,7 @@ somefunction(med_1);
 
 
 /* notice that in the implemetation
-we have Square& sqr = med1;
+we have Student& sdt = med1;
 
  -> the somefunction(Student& std)
    - the Medical_Student is indeed is a Student
@@ -64,13 +66,13 @@ we have Square& sqr = med1;
 /* Note that the array type is always 
     belong to the base class
 */
-Student* stud_ptr_arr[] = {new Student("Tom1",2016), 
-                        new Medical_Student("Jack",2018,"Skin dr")};
+Student* stud_ptr_arr[] {new Student{"Tom1",2016}, 
+                        new Medical_Student{"Jack",2018,"Skin dr"}};
 
 
 for (Student* std_ptr:stud_ptr_arr){
 
-std_ptr->log_info();
+    std_ptr->log_info();
 
 } /* End for loop */
 
@@ -78,9 +80,9 @@ std_ptr->log_info();
 /* Deleting allocated objects from the heap */
 for (Student* std_ptr:stud_ptr_arr){
 
- delete std_ptr;
+    delete std_ptr;
 
-} /* End for loop */
+    } /* End for loop */
 
 
 } /* End main() */
@@ -88,8 +90,7 @@ for (Student* std_ptr:stud_ptr_arr){
 
 /*
 
-Main idea of polymorphism:
-
+    Main idea of polymorphism:
 
 - let's start by some formal definition
 

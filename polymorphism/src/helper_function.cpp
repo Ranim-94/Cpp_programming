@@ -1,8 +1,8 @@
 
 #include "helper_function.hpp"
 
-void somefunction(Student& sqr){
+void somefunction(Student& sdt){
 
-sqr.log_info();
+sdt.log_info();
 
 } /* End somefunction() */
