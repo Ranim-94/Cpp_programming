@@ -31,6 +31,9 @@
 
 - When a class manages its own dynamic memory (e.g., with pointers), a custom copy constructor is needed.
 - The copy constructor should allocate new memory and copy the values, ensuring each object manages its own resources.
+  - This concept is called ***deep copy***
+  - That is we copy what is in the memory, and not the memory itself (this is known the ***shallow copy***)
+  - The copied content will be moved into a different memory address.
 - This prevents double deletion and ensures proper cleanup when destructors are called.
 
 ## 6. Best Practices
