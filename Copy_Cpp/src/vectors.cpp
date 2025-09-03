@@ -1,7 +1,7 @@
 #include "vectors.hpp"
 
 
-// Default Constructor
+// Default Constructor: no arguments are passed
 Vector3::Vector3(){
 
     this->m_x = -1;

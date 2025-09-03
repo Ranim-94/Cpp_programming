@@ -86,6 +86,14 @@ std::cout<<"\t - x coordinate for my_3rd_vec  = "
         used to initialize member of objects using another
         objects
 
+      - syntax of copy constructor: we pass a const reference to the 
+        object we want to copy
+
+      Vector3(const Vector3& other):
+      m_x(other.m_x), m_y(other.m_y), m_z(other.m_z) {
+        // Copy constructor body (if needed)
+      }
+
       - it is different the pure assignment operator
         because it creates a new object and initializes it
         with the values from the original object.

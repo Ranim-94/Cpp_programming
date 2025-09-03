@@ -90,3 +90,20 @@ std::cout << "\t v4: x = " << v4->x << ", y = " << v4->y << " at address: " << v
 delete v3;
 
 } /* End main() */
+
+/*
+    Notes main points:
+
+    when working with primitive data types, copying is done by value, 
+    meaning each variable has its own copy of the data.
+
+    when working with structs, copying is also done by value, c
+    reating a new copy of the entire struct.
+
+    When working with dynamic memory (pointers), copying is done by reference, 
+    meaning multiple pointers can point to the same memory location. 
+    This can lead to shared ownership of the data, 
+    and changes made through one pointer
+    will be reflected when accessing the data through another pointer.
+
+*/
