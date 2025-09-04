@@ -2,13 +2,16 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Makefile Build (main_object_copy)",
+			"label": "Makefile Build (default)",
 			"type": "shell",
-			"command": "make build_object_copy",
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build"
+			"command": "make",
+			"args": ["all"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": ["$gcc"],
+			"detail": "Build all targets using Makefile"
 		}
 	]
 }

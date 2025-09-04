@@ -7,12 +7,12 @@
 int main(){
 
 // setting up parameters    
-float x = 1.5f, y = 2.5f, z = 3.5f;
+float x = 1.5f, y = 2.5f;
 
 // create an instance of some vector
-Vector3 my_vec_1{x,y,z};
+Vector2 my_vec_1{x,y};
 
-Vector3 my_vec_2; // this with a default constructor
+Vector2 my_vec_2; // this with a default constructor
 /*
     Notice that since we are creating this instance
     with a defautl constructor, no need to ()
@@ -25,12 +25,18 @@ std::cout<<"x coordinate for my_vec_2 (default constructor) before copy = "
 
 // apply an assignemnt
 my_vec_2 = my_vec_1;
-// In fact, this is known as copy assignment operator
-// It copy the content of my_vec_1 to my_vec_2
-// But important: the copy assignment operator
-// doesn't create new object 
-// In other words, copy assignment operator
-// is for objects already constructed
+
+/*
+
+  In fact, this is known as copy assignment operator
+  It copy the content of my_vec_1 to my_vec_2
+  But important: the copy assignment operator
+   doesn't create new object 
+ In other words, copy assignment operator 
+ is for objects already constructed
+
+*/
+
 
 std::cout<<"x coordinate for my_vec_2 (default constructor) after copy = "
 <<my_vec_2.get_x()<<std::endl;
@@ -46,7 +52,7 @@ std::cout<<"x coordinate for my_vec_2 (default constructor) after copy = "
 std::cout<<"\n \t 2- Copy constructor section \n\n";
 
 // Here we have use the copy constructor
-Vector3 my_3rd_vec = my_vec_1;
+Vector2 my_3rd_vec = my_vec_1;
 
 /*
     Note that in copy constructor,

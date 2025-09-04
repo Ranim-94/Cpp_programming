@@ -5,32 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug main_copy_primitive",
+            "name": "Debug active file (portable)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/Copy_Cpp/output/main_copy_primitive",
+            "program": "${workspaceFolder}/${relativeFileDirname}/output/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/Copy_Cpp",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ]
-        },
-        {
-            "name": "Debug main_object_copy",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/Copy_Cpp/output/main_object_copy",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/Copy_Cpp",
+            "cwd": "${workspaceFolder}/${relativeFileDirname}/output",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",

@@ -11,6 +11,7 @@ This repository contains my learning journey and exploration of fundamental conc
   - [Table of Contents](#table-of-contents)
   - [Repo Structure](#repo-structure)
   - [Building](#building)
+    - [Building Rules](#building-rules)
   - [Resources](#resources)
     - [Youtube Channels](#youtube-channels)
     - [Web Resources](#web-resources)
@@ -25,6 +26,28 @@ This repository contains my learning journey and exploration of fundamental conc
 
 - Projects are currently built using Makefiles and the `g++` compiler.
 - I plan to explore CMake for build automation in the future.
+
+### Building Rules
+
+The rule are step up to build each main_xx.cpp file, along with its dependencies (the headers and source files usually in my `src` directory).
+
+To build an executable, use:
+<pre> make build_xx</pre>
+
+and to run:
+<pre> make run_xx </pre>
+
+The executable will be generated in a generated output directory
+
+<u>Example</u>: for `main_heap_copy_vec.cpp` in `Copy_Cpp` directory, type:
+<pre> make build_heap_copy_vec</pre>
+
+To run:
+
+<pre> make run_heap_copy_vec</pre>
+
+
+To run also type: make run_heap_copy_vec
 
 ## Resources
 
@@ -43,8 +66,9 @@ These youtube channels are more pedagogical and user friendly then official reso
 ### Web Resources
 
 - [studyplan](https://www.studyplan.dev/)
-  -nice website, contains for all C++ and gamedev using SDL2 also
-  -nicely structured, and organized
+  - nicely structured, and organized for each topic with some samples code
+    - and straightforward
+  - also some gamedev using SDL
 
 ### More Formal Resources
 

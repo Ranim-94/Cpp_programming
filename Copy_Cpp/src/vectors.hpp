@@ -1,28 +1,31 @@
 
 #pragma once
 
-class Vector3{
+class Vector2{
 
     private:
 
-    float m_x,m_y,m_z ;
+    float m_x,m_y ;
 
 
     public:
 
-    Vector3();// default constructor
+    Vector2();// default constructor
 
     // overloaded constructor
-    Vector3(float& x, float& y, float& z);
+    Vector2(float& x, float& y);
 
     // Copy constructor
-    Vector3(const Vector3& vec3);
+    Vector2(const Vector2& vec2);
+
+
+    float get_x(void);
+    float get_y(void);
 
     void set_x(float& x);
     void set_y(float& y);
-    void set_z(float& z);
+    
 
-    float get_x(void);
 
 
 };

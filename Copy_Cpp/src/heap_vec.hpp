@@ -2,6 +2,11 @@
 #pragma once
 #include<tuple>
 
+
+/* Note that this class uses dynamic memory allocation 
+   since the member variables are pointers
+*/
+
 class heap_vec2{
 
 private:
@@ -19,6 +24,11 @@ public:
 
     // destructor
     ~heap_vec2();
+
+    // custom copy assignment operator
+    heap_vec2& operator=(const heap_vec2& rhs_vec2);
+    // We use the keyword operator with = to overload the assignment operator
+    
 
     std::tuple<float,float> get_coordinates() const;
 
