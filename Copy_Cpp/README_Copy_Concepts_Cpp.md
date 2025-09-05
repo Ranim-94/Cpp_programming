@@ -27,9 +27,9 @@
 - **Copy Assignment Operator**: Used to copy data between already constructed objects. Does not create a new object.
 - **Copy Constructor**: Used to create a new object as a copy of an existing one. Allocates new memory and copies values.
 
-## 5. Copying Objects with Dynamic Memory
+## 5. Copying Objects with Dynamic Memory: The need of copy constructor
 
-- When a class manages its own dynamic memory (e.g., with pointers), a custom copy constructor is needed.
+- When a class manages its own dynamic memory (e.g., with pointers), a ***custom copy constructor is needed***.
 - The copy constructor should allocate new memory and copy the values, ensuring each object manages its own resources.
   - This concept is called ***deep copy***
   - That is we copy what is in the memory, and not the memory itself (this is known the ***shallow copy***)
@@ -43,3 +43,11 @@
 - Proper resource management avoids memory leaks and double deletion errors.
 
 ---
+
+## 7. Rule of 3 and the Rule of 2
+
+- The ***Rule of big 3*** states that if we define our constructor for some reason (some algorithm to initilize the variable,...) we should also define and implement the copy constructor and the destructor
+- The ***Rule of big 2***: you can get away from implementing a destructor, if you know you member data will handle the resources appropirly
+  - Such as havin a `vector<int> data` for example in the member section
+  - The `vector` containor handle deleting data internally
+- <u>Reference:</u> [The rule of three/five/zero ](https://de.cppreference.com/w/cpp/language/rule_of_three.html)
