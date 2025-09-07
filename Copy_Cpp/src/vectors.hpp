@@ -13,14 +13,14 @@ class Vector2{
     Vector2();// default constructor
 
     // overloaded constructor
-    Vector2(float& x, float& y);
+    Vector2(const float& x, const float& y);
 
     // Copy constructor
     Vector2(const Vector2& vec2);
 
 
-    float get_x(void);
-    float get_y(void);
+    float get_x(void) const;
+    float get_y(void) const;
 
     void set_x(float& x);
     void set_y(float& y);

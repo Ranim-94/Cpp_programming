@@ -6,6 +6,8 @@
 
 [Points 5 and 6: main_heap_copy_vec.cpp](./main_heap_copy_vec.cpp)
 
+[Point 7: main_obj_func.cpp](./main_obj_func.cpp)
+
 ## 1. Copying Primitive Data Types
 
 - Copying primitive types (e.g., `int a = b;`) creates a new variable with its own memory address.
@@ -44,10 +46,15 @@
 
 ---
 
-## 7. Rule of 3 and the Rule of 2
+## 7. Passing Objects to Functions
+
+- When passing objects to functions, we should ***pass them by references*** (and better by const & to prevent accident modifiation of object inside the function), so we don't have many copies.
+- Otherwise, the copy constructor will be called (even if we don't implement one, the compiler generated one will be called) each we invoke the function using the object as parameter.
+
+## 8. Rule of 3 and the Rule of 2
 
 - The ***Rule of big 3*** states that if we define our constructor for some reason (some algorithm to initilize the variable,...) we should also define and implement the copy constructor and the destructor
 - The ***Rule of big 2***: you can get away from implementing a destructor, if you know you member data will handle the resources appropirly
   - Such as havin a `vector<int> data` for example in the member section
   - The `vector` containor handle deleting data internally
-- <u>Reference:</u> [The rule of three/five/zero ](https://de.cppreference.com/w/cpp/language/rule_of_three.html)
+- <u>Reference:</u> [The rule of three/five/zero](https://de.cppreference.com/w/cpp/language/rule_of_three.html)
