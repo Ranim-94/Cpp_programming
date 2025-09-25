@@ -37,7 +37,7 @@ To build an executable, use:
 and to run:
 <pre> make run_xx </pre>
 
-The executable will be generated in a generated output directory
+The executable will be generated in a generated `output` directory
 
 <u>Example</u>: for `main_heap_copy_vec.cpp` in `Copy_Cpp` directory, type:
 <pre> make build_heap_copy_vec</pre>
@@ -45,9 +45,6 @@ The executable will be generated in a generated output directory
 To run:
 
 <pre> make run_heap_copy_vec</pre>
-
-
-To run also type: make run_heap_copy_vec
 
 ## Resources
 

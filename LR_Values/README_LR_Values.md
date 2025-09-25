@@ -10,7 +10,7 @@ Let's satart by some definition (or some properties) about L and R values
   - 1.3 we can use the `&` operator, since it has an addresse
 
 2.<u> R values </u>:
-  - 2.1 some temporary value, that won't exist beyond a scope
+  - 2.1 some **temporary value**, that won't exist beyond a scope
   - 2.2 doesn't have a memory addresse
   - 2.3 we can't store in it
 
@@ -25,12 +25,10 @@ Let's satart by some definition (or some properties) about L and R values
 - whereas `2`,`1` are R values
   - after `int b = 1;`, `2` and `1` won't exist anymore in our code
 - Now as for `a+b`: it is an R value, even if it is composed from variables
-  - because we can see `a+b` as `(a+b)`: it is only an ***expression*** that will do the sum, 
-    and  sotre it in `c`
+  - because we can see `a+b` as `(a+b)`: it is only an ***expression*** that will do the sum, and after the sum is executed, it will disappear or being assigned to some variable. In the example, it is assigned to  `c`
 - `int array[100];`
   - `array` is an L value, since it has location in memory and we can store in it
   - `aray[10+c]`: `10+c` is an R value
-
 
 ## L and R values cases in function call
 
