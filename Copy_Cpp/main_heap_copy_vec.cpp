@@ -1,12 +1,20 @@
 
 
+/*
+
+    Read README_heap_copy_vec.md to see 
+    analysis, some points about the code
+
+*/
+
+
 
 #include <iostream>
 #include "src/heap_vec.hpp"
 
 int main(){
 
-    float x {5}, y {10};
+    float x{5}, y{10};
 
     heap_vec2 v1{x,y}; // normal constructor
 
@@ -14,32 +22,60 @@ int main(){
 
     std::cout << "\t Coordinates of v1: (" << x1 << "," << y1 << ")" 
     << std::endl;
+    std::cout<< "\t \t Address of v1.m_x|v1.m_y:"<<v1.get_x()
+    <<"|"<<v1.get_y()<<std::endl;
 
     // Creating object vector v2 and initialize it to v1
-    heap_vec2 v2{v1}; // copy constructor
+    heap_vec2 v2 = v1; // copy constructor
+    // Note that in this case, it is not the normal constructor of
+    // v2 will be called, it is the copy constructor using v1
+    // will be called, and it will take heap_vec2 v1 as argument
+
 
     auto [x2,y2] = v2.get_coordinates();
 
     std::cout << "\t Coordinates of v2 (initialized by v1): (" 
     << x2 << "," << y2 << ")"<< std::endl;
+    std::cout<< "\t \t Address of v2.m_x|v2.m_y:"<<v2.get_x()
+    <<"|"<<v2.get_y()<<std::endl<<std::endl;
 
     // Changing v2 now: setting a new x coordinate
+    
+    std::cout<<"\t -> Changing v2.x value"<<std::endl;
+    
     v2.set_x(15);
+    std::cout<< "\t \t - Address of v2.m_x|v2.m_y (after changing x value):"<<v2.get_x()
+    <<"|"<<v2.get_y()<<std::endl<<std::endl;
 
-    // printing value again
+    // capture coordinate of v2
     auto [x2_new,y2_new] = v2.get_coordinates();
 
+    // re-capture coordinate of v1
+    auto [x1_new,y1_new] = v1.get_coordinates();
+    /*
+        
+        !! NOTE !!
+
+        if a custome propoer copy constructor is implemented
+        v1 won't be affected by the change in v2
+
+        If no copy constructor is implemented
+        v1 will be affected by the change in v2
+
+    */
+
+
+    // printing value again
     std::cout << "\t Coordinates of v2 (after modification of x coordinate): (" 
     << x2_new << "," << y2_new << ")" << std::endl;
 
-    /*
-        !! NOTE !! since we have defined a copy constructor in a proper way,
-        v1 won't change when we modify v2, and vice versa.
-    
-    */
+    std::cout << "\t Coordinates of v1 (after modification of x coordinate): (" 
+    << x1_new << "," << y1_new << ")" << std::endl;
 
     // =========== Custome Copy Assignment Operator =============
 
+    std::cout<<std::endl; // skip a line
+    
     std::cout << "\t =========== Custome Copy Assignment Operator =============" 
     << std::endl<< std::endl;
 

@@ -23,7 +23,7 @@ std::cout<<"\n \t 1-Copy Assignment Operator \n \n";
 std::cout<<"x coordinate for my_vec_2 (default constructor) before copy = "
 <<my_vec_2.get_x()<<std::endl;
 
-// apply an assignemnt
+// apply an assignment
 my_vec_2 = my_vec_1;
 
 /*

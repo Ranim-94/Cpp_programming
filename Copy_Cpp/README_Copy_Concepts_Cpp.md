@@ -1,14 +1,9 @@
 # Copy Concepts in C++
 
-[Points 1–3: main_copy_primitive.cpp](./main_copy_primitive.cpp)
-
-[Point 4: main_object_copy.cpp](./main_object_copy.cpp)
-
-[Points 5 and 6: main_heap_copy_vec.cpp](./main_heap_copy_vec.cpp)
-
-[Point 7: main_obj_func.cpp](./main_obj_func.cpp)
 
 ## 1. Copying Primitive Data Types
+
+[Points 1–3: main_copy_primitive.cpp](./main_copy_primitive.cpp)
 
 - Copying primitive types (e.g., `int a = b;`) creates a new variable with its own memory address.
 - Changing one variable does not affect the other.
@@ -26,10 +21,14 @@
 
 ## 4. Copy Assignment Operator vs. Copy Constructor
 
+[Point 4: main_object_copy.cpp](./main_object_copy.cpp)
+
 - **Copy Assignment Operator**: Used to copy data between already constructed objects. Does not create a new object.
 - **Copy Constructor**: Used to create a new object as a copy of an existing one. Allocates new memory and copies values.
 
 ## 5. Copying Objects with Dynamic Memory: The need of copy constructor
+
+[Points 5 and 6: main_heap_copy_vec.cpp](./main_heap_copy_vec.cpp)
 
 - When a class manages its own dynamic memory (e.g., with pointers), a ***custom copy constructor is needed***.
 - The copy constructor should allocate new memory and copy the values, ensuring each object manages its own resources.
@@ -48,7 +47,9 @@
 
 ## 7. Passing Objects to Functions
 
-- When passing objects to functions, we should ***pass them by references*** (and better by const & to prevent accident modifiation of object inside the function), so we don't have many copies.
+[Point 7: main_obj_func.cpp](./main_obj_func.cpp)
+
+- When passing objects to functions, we should ***pass them by references*** (and better by `const &` to prevent accident modifiation of object inside the function), so we don't have many copies.
 - Otherwise, the copy constructor will be called (even if we don't implement one, the compiler generated one will be called) each we invoke the function using the object as parameter.
 
 ## 8. Rule of 3 and the Rule of 2

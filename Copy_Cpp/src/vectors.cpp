@@ -18,8 +18,6 @@ Vector2::Vector2(const float& x, const float& y)
 }
 
 // Copy Constructor
-
-
 Vector2::Vector2(const Vector2& vec2)
 :m_x{2*vec2.m_x}, m_y{2*vec2.m_y}{
 

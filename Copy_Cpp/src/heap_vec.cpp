@@ -6,7 +6,9 @@
 
 // Default Constructor
 heap_vec2::heap_vec2():
-m_x(new float{0}),m_y(new float{0}){
+m_x(new float{0}),
+m_y(new float{0}){
+    
     std::cout << "\t -> Normal constructor called" << std::endl;
 
 }
@@ -14,7 +16,8 @@ m_x(new float{0}),m_y(new float{0}){
 
 // Normal Constructor
 heap_vec2::heap_vec2(float x, float y):
-m_x(new float{x}), m_y(new float{y}) {
+m_x(new float{x}), 
+m_y(new float{y}) {
 
   std::cout << "\t -> Normal constructor called" << std::endl;
 }
@@ -36,13 +39,18 @@ m_x(new float{x}), m_y(new float{y}) {
 */
 
 
- // Copy constructor   
+  
+ /*
+  // Copy constructor 
  heap_vec2::heap_vec2(const heap_vec2& some_vec2):
- m_x(new float{*some_vec2.m_x}),m_y(new float{*some_vec2.m_y}){
+ m_x(new float{*some_vec2.m_x}),
+ m_y(new float{*some_vec2.m_y}){
 
     std::cout << "\t -> Copy constructor called" << std::endl;
 
 }
+
+*/
 
 // Custom copy assignment operator
 heap_vec2& heap_vec2::operator=(const heap_vec2& rhs_vec2){
@@ -81,6 +89,8 @@ heap_vec2& heap_vec2::operator=(const heap_vec2& rhs_vec2){
 // Destructor
  heap_vec2::~heap_vec2(){
     
+    std::cout<<"Destructor Called"<<std::endl<<std::endl;
+
     // deallocate the memory on the heap
     delete this->m_x;
     delete this->m_y;
@@ -97,3 +107,14 @@ void heap_vec2::set_x(float x) {
 }
 
 
+float* heap_vec2::get_x(void){
+
+    return this->m_x;
+
+}
+
+float* heap_vec2::get_y(void){
+
+    return this->m_y; 
+
+}

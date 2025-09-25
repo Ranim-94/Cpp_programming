@@ -20,7 +20,7 @@ public:
     
     heap_vec2(float x,float y); // Normal Constructor
     
-    heap_vec2(const heap_vec2& some_vec2); // Copy constructor
+    // heap_vec2(const heap_vec2& some_vec2); // Copy constructor
 
     // destructor
     ~heap_vec2();
@@ -33,5 +33,8 @@ public:
     std::tuple<float,float> get_coordinates() const;
 
     void set_x(float x);
+
+    float* get_x(void);
+    float* get_y(void);
 
 }; /* End class heap_vec2 */
