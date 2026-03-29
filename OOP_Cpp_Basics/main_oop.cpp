@@ -9,24 +9,25 @@ int main(){
     // Setting some initial coordinates
     float x{5}, y{10};
 
-    Vector2 v1{x,y}; // normal constructor
+    // Instantiating objects using different constructors
+
+    Vector2 v1{x,y,"v1"}; // normal constructor
+    //giving v1 some coordinate and a name
+
+    v1.log_vec(); // for v1
 
     Vector2 v2; // default constructor
     /* Notice that no {} are used */
 
+    v2.log_vec(); // for v2    
     
-    std::cout << "Coordinates of v1: x = " << v1.get_x() << "| y = " 
-    << v1.get_y() << std::endl;
-
-    std::cout << "Coordinates of v2 (default constructor): x = " << v2.get_x() << "| y = " 
-    << v2.get_y() << std::endl;
-
+  
     // Some heap allocated object v3
+    Vector2* v3 = new Vector2{15,20,"v3"}; // normal constructor
 
-    Vector2* v3 = new Vector2{15,20}; // normal constructor
+    std::cout << " \t -> Heap allocated vectors" << std::endl;
 
-    std::cout << "Coordinates of v3 (heap allocated): x = " << v3->get_x() << "| y = " 
-    << v3->get_y() << std::endl;
+    v3->log_vec();// note that for heap objects, we use -> operator
 
     delete v3; // Don't forget to free the allocated memory
     // because destructor is not called automatically for heap allocated objects

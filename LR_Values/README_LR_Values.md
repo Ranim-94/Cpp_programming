@@ -1,6 +1,20 @@
 # L,R Values and Move Semantics
 
+## Table of Contents
+
+- [L,R Values and Move Semantics](#lr-values-and-move-semantics)
+  - [Table of Contents](#table-of-contents)
+  - [General Points for L and R values](#general-points-for-l-and-r-values)
+    - [ Definition ](#-definition-)
+    - [ Examples ](#-examples-)
+  - [L and R values cases in function call](#l-and-r-values-cases-in-function-call)
+  - [General Rules](#general-rules)
+
+---
+
 ## General Points for L and R values
+
+### <u> Definition </u>
 
 Let's satart by some definition (or some properties) about L and R values
 
@@ -47,7 +61,9 @@ Let's satart by some definition (or some properties) about L and R values
   `int double_data(int&& input)`
   - `double_data(5)` is the only form allowed using double references
 
-### Rules
+## General Rules
+
+From [L and R values cases in function call](#l-and-r-values-cases-in-function-call), we can state the following rules:
 
 1. Normal L values `int` can be used with L values or R values
 2. L values references  `int&`: only using L value

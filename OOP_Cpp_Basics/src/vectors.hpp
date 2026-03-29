@@ -1,12 +1,15 @@
 
 #pragma once
 
+#include<string>
+
 class Vector2{
 
     private:
+    
+    float m_x,m_y; // cartesian coordinate
 
-    float m_x,m_y;
-
+    std::string m_vec_name , m_vec_id;
 
     public:
 
@@ -16,7 +19,7 @@ class Vector2{
 
     // parameterized constructor <-> Arguments required when creating
     // an instance of the class
-    Vector2(float x, float y);
+    Vector2(float x, float y, std::string vec_name);
 
     // Getter or Accessor methods    
     float get_x(void);
@@ -25,6 +28,9 @@ class Vector2{
     // Setter or Mutator methods
     void set_x(float& x);
     void set_y(float& y);
+
+    // Some logging method
+    void log_vec(void);
 
     
 
