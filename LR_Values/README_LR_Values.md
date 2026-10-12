@@ -4,6 +4,7 @@
 
 - [L,R Values and Move Semantics](#lr-values-and-move-semantics)
   - [Table of Contents](#table-of-contents)
+  - [Prerequisite](#prerequisite)
   - [General Points for L and R values](#general-points-for-l-and-r-values)
     - [ Definition ](#-definition-)
     - [ Examples ](#-examples-)
@@ -11,6 +12,10 @@
   - [General Rules](#general-rules)
 
 ---
+
+## Prerequisite
+
+Idea of functions, and address operator `&` ([functions](../functions/))
 
 ## General Points for L and R values
 
@@ -56,6 +61,7 @@ Let's satart by some definition (or some properties) about L and R values
 - Special case: L value reference can be used with R value if we add `const` <->
   `int double_data(const int& input)`
   - `double_data(5)` is allowed using this type of function signature
+  - That's why we see allot of `const` in many `C++` codes
 
 - If we want to create a function that accepts only R value, we use `&&` <->
   `int double_data(int&& input)`

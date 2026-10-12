@@ -97,8 +97,8 @@ delete v3;
     when working with primitive data types, copying is done by value, 
     meaning each variable has its own copy of the data.
 
-    when working with structs, copying is also done by value, c
-    reating a new copy of the entire struct.
+    when working with structs, copying is also done by value, 
+    creating a new copy of the entire struct.
 
     When working with dynamic memory (pointers), copying is done by reference, 
     meaning multiple pointers can point to the same memory location. 

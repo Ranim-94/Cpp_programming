@@ -19,9 +19,9 @@
 
 ---
 
-This document summarizes the Object-Oriented Programming concepts demonstrated in the `OOP_Cpp_Basics` module, using a `Vector2` class as a practical example.
+`OOP_Cpp_Basics` module introduce **Object-Oriented Programming** concepts demonstrated in the, using a `Vector2` class as a practical example.
 
-The idea presented here are introductory concetps, and more advanced concepts (like inheritance, polymorphism, copy constructor,...) will be explained in other modules
+We focus first on **introductory concetps**, and more advanced concepts (like inheritance, polymorphism, copy constructor,...) will be explained in other modules
 
 ---
 
@@ -42,6 +42,11 @@ The `Vector2` class represents a 2D Cartesian vector with coordinates `(x, y)` a
 ---
 
 ## 1. Class Definition & Access Modifiers
+
+Usually when working with classes, we have 2 steps:
+- specify and desing attributes (members) and methods
+  - usually done in headers files (`.h` or `.hpp` files)
+- implementing the methods in source files (some `.cpp` files)
 
 Defined in `src/vectors.hpp`.
 
@@ -74,11 +79,18 @@ class Vector2 {
 
 ## 2. Constructors
 
-Both constructors are implemented in `src/vectors.cpp` using **member initializer lists**.
+Constructors are simply methods to initialize the member of class, that is `m_x`, `m_y`, `m_vec_name`, `m_vec_id`. There exist different type of constructors:
+
+- Default Constructor: no argument required
+- Parameterized Constructor
+
+Both constructors are implemented in source files `src/vectors.cpp` using **member initializer lists**.
 
 ### Default Constructor
 
-No arguments are required when creating an instance. Attributes are initialized to sentinel/default values.
+Default constructor requires no arguments are required when creating an instance. Attributes are initialized to sentinel/default values.
+
+<u>Implementation:</u>
 
 ```cpp
 Vector2::Vector2():
@@ -91,9 +103,13 @@ Vector2::Vector2():
 }
 ```
 
+- Here default values for coordinate `m_x` and `m_y` are chosen to have a value of `-1`
+
 ### Parameterized Constructor
 
 Arguments are required when creating an instance. Coordinates and a name are provided by the caller.
+
+<u>Implementation:</u>
 
 ```cpp
 Vector2::Vector2(float x, float y, std::string vec_name):
@@ -110,7 +126,7 @@ Vector2::Vector2(float x, float y, std::string vec_name):
 
 ## 3. Member Initializer List
 
-The syntax after the `:` in the constructor signature is called the **member initializer list**. Key points from the code comments:
+The syntax after the `:` (that is `m_x{x}`,`m_y{y}`,...) in the constructor signature is called the **member initializer list**. Key points from the code comments:
 
 - Each member variable is initialized **before** the constructor body executes.
 - In the list, you can **call functions** — for example, `m_vec_id` uses `std::string::append()` to build the ID by concatenating the name, x, and y values:
