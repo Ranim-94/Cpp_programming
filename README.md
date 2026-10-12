@@ -39,7 +39,7 @@ Then we add the flag `std=c++23` as shown in [Figure 1](#fig1)
 
 <div id="fig1">
 <img src="Figures_VsCode/cpp_std_23.png" alt="Widget Types" width="450">
-<p><strong>Figure 1:</strong> Configuring SFML in Eclipse</p>
+<p><strong>Figure 1:</strong> Configuring C++23 in Eclipse</p>
 </div>
 
 ### G++ Installation for Modern C++
