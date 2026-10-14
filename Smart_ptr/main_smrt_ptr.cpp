@@ -1,47 +1,109 @@
 
 
 #include <iostream>
-#include <memory> // to use smart pointers
+#include <string>
+#include <print>
+#include <format>
+
+#include <memory> // use smart pointers
+
+
+// user defined type
+class UDT{
+
+public:
+	UDT(){
+
+		std::println("Default Constructor called");
+	}
+
+	~UDT(){
+
+			std::println("Destructor called");
+		}
+
+}; // End UDT
+
+
 
 int main(){
 
 
 
- int var = 5; /* initializing some variable */    
+ std::unique_ptr<UDT> x = std::make_unique<UDT>();
 
+ /*
+  *  x --> UDT in memory <-> x is pointing to UDT in memory
+  *
+  *  In unique ptr, copy (pointing to same data) is not allowed
+  *  but moving is allowed
+  *  	- Example:
+  *  		std::unique_ptr<UDT> y = std::move(x);
+  *
+  *
+  * 2) unique pointers are scoped pointers
+  * 	their liftime end with the scope of {}, or the block
+  * 	of code
+  *
+  *
+  * */
+
+ // create an array of objects
+ std::unique_ptr<UDT[]> x_arr = std::make_unique<UDT[]>(3);
  
- /* assgning memory usign pointer */
 
- std::unique_ptr<int> var_ptr = std::make_unique<int> (var);
- 
-std::cout<<"Unique pointer logs"<<std::endl;
+std::shared_ptr<UDT> ptr_sh_udt = std::make_shared<UDT>();
 
- std::cout<<"\t -> var value = "<<*var_ptr<<std::endl;
+// shared pointers allows sharing
 
- std::cout<<"\t -> var address = "<<var_ptr.get()<<std::endl;
+/*
+    shared pointers allow sharing
+        so both pointers pointing to same resources
+
+    Also shared pointers are scoped pointers, as the unique pointers
+
+    shared pointer keep track of the object by having a reference count
+        that is , how many pointers are pointing to the same resources
+
+*/
+
+{
+
+    std::shared_ptr<UDT> ptr_sh_udt_2 = ptr_sh_udt;
+
+    std::string count_obj_udt = 
+    std::format("UDT count using shared pointers (ptr 1) before scope = {}",
+    		ptr_sh_udt.use_count());
+
+    std::string count_obj_udt_2 =
+        std::format("UDT count using shared pointers (ptr 2) before scope = {}",
+        		ptr_sh_udt_2.use_count());
+
+    /*
+     *  Both for 'ptr_sh_udt_2' and 'ptr_sh_udt'
+     *  we should see use_count() gives 2
+     *
+     *
+     * */
 
 
- std::cout<<std::endl;
 
- // shared pointer
-int var_2 = 6;
+    std::println("{}",count_obj_udt);
 
-std::shared_ptr<int> var2_ptr = std::make_shared<int>(var_2);
+    std::println("{}",count_obj_udt_2);
 
-// shared pointer allow copy and assignment
-std::shared_ptr<int> var3_ptr = var2_ptr;
 
-std::cout<<"shared pointer logs"<<std::endl;
+} // End scope for 'ptr_sh_udt_2'
 
- std::cout<<"\t -> var_2 value = "<<*var2_ptr<<std::endl;
+    std::string count_obj_udt_after =
+    std::format("UDT count using shared pointers after scope = {}",
+    ptr_sh_udt.use_count());
 
- std::cout<<"\t -> var_2 address = "<<var2_ptr.get()<<std::endl;
+    std::println("{}",count_obj_udt_after);
 
- std::cout<<"\t -> assgning std::shared_ptr<int> var3_ptr = var2_ptr"<<std::endl;
 
- std::cout<<"\t\t -> var3_ptr address = "<<var3_ptr.get()<<"| value = "<<*var3_ptr<<std::endl;
 
- std::cout<<std::endl;
+    
 
 
 } /* End main() */

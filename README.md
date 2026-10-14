@@ -10,6 +10,10 @@ This repository contains my learning journey and exploration of fundamental conc
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Repo Structure](#repo-structure)
+  - [VsCode](#vscode)
+    - [Installation](#installation)
+    - [Verification](#verification)
+    - [Update](#update)
   - [Building](#building)
     - [Support for Modern C++ in Eclipse](#support-for-modern-c-in-eclipse)
     - [Check Compiler version](#check-compiler-version)
@@ -22,6 +26,31 @@ This repository contains my learning journey and exploration of fundamental conc
 
 - Each directory focuses on a specific idea or concept in C++.
 - Examples include object-oriented programming, pointers, templates, inheritance, and more.
+
+## VsCode
+
+### Installation
+
+To set up **Vscode** under Linux, 1st we need to download the official Microsoft `.deb` package
+
+<pre>wget -O /tmp/code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"</pre>
+
+`wget` is a non-interactive command-line tool that downloads files over HTTP, HTTPS and FTP.
+- `-O /tmp/code.deb`: write the downloaded content to this file name (`/tmp` is a temporary directory) instead of using the name from the URL.
+- The URL is the official VS Code download endpoint. `build=stable` selects the stable release and `os=linux-deb-x64` selects the Debian/Ubuntu package for 64-bit x86. The URL is quoted so the shell does not interpret `&`.
+
+Then we can install the debian package. Using `apt install` (instead of `dpkg -i`) also resolves dependencies. The package's post-install script also registers the Microsoft apt repo (`/etc/apt/sources.list.d/vscode.sources`), so later updates come through `apt`.
+
+<pre>sudo apt install /tmp/code.deb</pre>
+
+### Verification
+
+<pre>apt policy code</pre>
+
+### Update
+
+<pre>sudo apt install --only-upgrade code</pre>
+
 
 ## Building
 

@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -std=c++17
+CXXFLAGS = -Wall -Wextra -std=c++23
 TARGET = output
 SRC_DIR = src
 SOURCES = $(wildcard *.cpp) $(wildcard $(SRC_DIR)/*.cpp)
